@@ -1,0 +1,24 @@
+Choice of the highest normal form to reach (1: 1NF, 2: 2NF, 3: 3NF, B: BCNF, 4: 4NF, 5: 5NF):1
+Find the highest normal form of the input table? (1: Yes, 2: No):1
+Enter the Primary Key values: StudentID, Course
+
+
+Already Normalized to 1NF
+
+
+Queries after decomposing to 1NF:
+
+
+CREATE TABLE StudentID_Course_table (
+  StudentID VARCHAR(255) PRIMARY KEY,
+  FirstName VARCHAR(255),
+  LastName VARCHAR(255),
+  Course VARCHAR(255) PRIMARY KEY,
+  Professor VARCHAR(255),
+  ProfessorEmail VARCHAR(255),
+  CourseStart VARCHAR(255),
+  CourseEnd VARCHAR(255)
+);
+
+
+Highest Normal Form is: 1NF

@@ -1,0 +1,59 @@
+Choice of the highest normal form to reach (1: 1NF, 2: 2NF, 3: 3NF, B: BCNF, 4: 4NF, 5: 5NF):2
+Find the highest normal form of the input table? (1: Yes, 2: No):1
+Enter the Primary Key values: StudentID, Course
+
+
+Tables after 2NF decomposition:
+  StudentID FirstName  LastName
+0       101      John       Doe
+1       102      Jane       Roe
+2       103   Arindam    Khanda
+3       104      Jose  Franklin
+4       105       Ada  Lovelace
+
+
+    Course CourseStart  CourseEnd  Professor
+0  Math101  01-01-2023  5/30/2023   Dr.Smith
+1    CS101  02-01-2023  6/15/2023   Dr.Jones
+2   Bio101  03-01-2023  7/20/2023  Dr.Watson
+
+
+   Professor  ProfessorEmail
+0   Dr.Smith   smith@mst.edu
+1   Dr.Jones   jones@mst.edu
+2  Dr.Watson  watson@mst.edu
+
+
+   StudentID_fk Course_fk
+0           101   Math101
+1           102   Math101
+2           103     CS101
+3           104    Bio101
+4           105     CS101
+
+
+Queries after decomposing to 2NF
+
+
+CREATE TABLE StudentID_table (
+  StudentID VARCHAR(255) PRIMARY KEY,
+  FirstName VARCHAR(255),
+  LastName VARCHAR(255)
+);
+CREATE TABLE Course_table (
+  Course VARCHAR(255) PRIMARY KEY,
+  CourseStart VARCHAR(255),
+  CourseEnd VARCHAR(255),
+  Professor VARCHAR(255)
+);
+CREATE TABLE Professor_table (
+  Professor VARCHAR(255) PRIMARY KEY,
+  ProfessorEmail VARCHAR(255)
+);
+CREATE TABLE S_t_u_d_e_n_t_I_D_C_o_u_r_s_e_table (
+  StudentID_fk VARCHAR(255),
+  Course_fk VARCHAR(255)
+);
+
+
+Highest Normal Form is: 1NF
