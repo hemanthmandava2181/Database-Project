@@ -1,0 +1,95 @@
+Choice of the highest normal form to reach (1: 1NF, 2: 2NF, 3: 3NF, B: BCNF, 4: 4NF, 5: 5NF):5
+Find the highest normal form of the input table? (1: Yes, 2: No):1
+Enter the Primary Key values: StudentID, Course
+
+
+Tables after 5NF decomposition:
+
+StudentID	FirstName	LastName
+101			John		Doe
+102			Jane		Roe
+103			Arindam		Khanda
+104			Jose		Franklin
+105			Ada			Lovelace
+
+
+ProfessorID	ProfessorName	ProfessorEmail
+P01			Dr. Smith		smith@mst.edu
+P02			Dr. Jones		jones@mst.edu
+P03			Dr. Watson		watson@mst.edu
+
+
+CourseID	CourseName
+C01			Math101
+C02			CS101
+C03			Bio101
+
+
+CourseID	StartDate
+C01			2023-01-01
+C02			2023-02-01
+C03			2023-03-01
+
+
+CourseID	EndDate
+C01			2023-05-30
+C02			2023-06-15
+C03			2023-07-20
+
+
+StudentID	CourseID
+101			C01
+102			C01
+103			C02
+104			C03
+105			C02
+
+
+ProfessorID	CourseID
+P01			C01
+P02			C02
+P03			C03
+
+
+Queries after decomposing to 5NF
+
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Professors (
+    ProfessorID VARCHAR(10) PRIMARY KEY,
+    ProfessorName VARCHAR(255) NOT NULL,
+    ProfessorEmail VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Courses (
+    CourseID VARCHAR(10) PRIMARY KEY,
+    CourseName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE CourseStartDates (
+    CourseID VARCHAR(10),
+    StartDate DATE NOT NULL
+);
+
+CREATE TABLE CourseEndDates (
+    CourseID VARCHAR(10),
+    EndDate DATE NOT NULL
+);
+
+CREATE TABLE Enrollments (
+    StudentID INT,
+    CourseID VARCHAR(10)
+);
+
+CREATE TABLE ProfessorCourses (
+    ProfessorID VARCHAR(10),
+    CourseID VARCHAR(10)
+);
+
+
+Highest Normal Form is: 1NF

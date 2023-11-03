@@ -1,0 +1,74 @@
+Choice of the highest normal form to reach (1: 1NF, 2: 2NF, 3: 3NF, B: BCNF, 4: 4NF, 5: 5NF):B
+Find the highest normal form of the input table? (1: Yes, 2: No):1
+Enter the Primary Key values: StudentID, Course
+
+
+Tables after BCNF decomposition:
+  StudentID FirstName  LastName
+0       101      John       Doe
+1       102      Jane       Roe
+2       103   Arindam    Khanda
+3       104      Jose  Franklin
+4       105       Ada  Lovelace
+
+
+    Course CourseStart  CourseEnd  
+0  Math101  01-01-2023  5/30/2023   
+1    CS101  02-01-2023  6/15/2023 
+2   Bio101  03-01-2023  7/20/2023 
+
+
+   Professor  ProfessorEmail
+0   Dr.Smith   smith@mst.edu
+1   Dr.Jones   jones@mst.edu
+2  Dr.Watson  watson@mst.edu
+
+
+    Course   Professor
+0  Math101   Dr.Smith
+1  Math101   Dr.Smith
+2    CS101   Dr.Jones
+3   Bio101   Dr.Watson
+4    CS101   Dr.Jones
+
+
+  StudentID   Course 
+0       101   Math101
+1       102   Math101 
+2       103   CS101 
+3       104   Bio101 
+4       105   CS101
+
+
+Queries after decomposing to BCNF
+
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255)
+);
+
+CREATE TABLE Courses (
+    Course VARCHAR(50) PRIMARY KEY,
+    CourseStart DATE,
+    CourseEnd DATE
+);
+
+CREATE TABLE Professors (
+    Professor VARCHAR(255) PRIMARY KEY,
+    ProfessorEmail VARCHAR(255)
+);
+
+CREATE TABLE CourseProfessors (
+    Course VARCHAR(50),
+    Professor VARCHAR(255),
+);
+
+CREATE TABLE Enrollments (
+    StudentID INT,
+    Course VARCHAR(50),
+);
+
+
+Highest Normal Form is: 1NF
