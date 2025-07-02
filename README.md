@@ -9,13 +9,6 @@ To develop a program that takes a dataset (relation) and functional dependencies
 ## Contributors
 Hemanth Sirish Kumar sai, Mandava (hmm8b@umsystem.edu)
 
-Sivani, Rayala (sr2fb@umsystem.edu)
-
-Bhargavi, Gunji (bg39x@umsystem.edu)
-
-Nivitha, Maddela (nmcy7@umsystem.edu)
-
-
 ## Project Contents
 ### Input Files
   1. exampleInputTable.csv: The input relation data
